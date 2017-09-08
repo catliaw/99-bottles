@@ -1,5 +1,3 @@
-
-
 # define class Bottles
 class Bottles
   # define verse method that produces one single verse
@@ -31,13 +29,15 @@ VERSE
   # define verses method that produces verses between a specified range
   def verses(start_num_bottles, end_num_bottles)
     all_verses = ""
-    # loops through while start_num_bottles is greater than or equal to end_num_bottles
+    # loops through while start_num_bottles is greater than/equal to end_num_bottles
     while start_num_bottles >= end_num_bottles do
-      # 
+      # add and save verse with updated start_num_bottles number to all_verses string
       all_verses << verse(start_num_bottles)
+      # add a newline after each verse except for last verse
       if start_num_bottles != end_num_bottles
         all_verses << "\n"
       end
+      # decrement start_num_bottles by 1
       start_num_bottles = start_num_bottles - 1
     end
     return all_verses
@@ -48,5 +48,4 @@ VERSE
     complete_song = verses(99, 0)
     return complete_song
   end
-  # binding.pry
 end
