@@ -6,11 +6,11 @@ class Bottles
   # end
 
   def verse(num_bottles)
-    puts <<-VERSE
+    multiline_verse = <<-VERSE
 #{num_bottles} bottles of beer on the wall, #{num_bottles} bottles of beer.
 Take one down and pass it around, #{num_bottles - 1} bottles of beer on the wall.
 VERSE
-    new_num_bottles = num_bottles - 1
-    return new_num_bottles
+    puts multiline_verse
+    return multiline_verse
   end
 end
