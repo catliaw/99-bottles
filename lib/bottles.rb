@@ -1,33 +1,45 @@
+require 'pry'
+
 # define class Bottles
 class Bottles
-  # def initialize(num_bottles)
-  #   # Instance variables
-  #   @num_bottles = num_bottles
-  # end
-
   def verse(num_bottles)
     if num_bottles == 0
-      multiline_verse = <<-VERSE
+      one_verse = <<-VERSE
 No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.
 VERSE
     elsif num_bottles == 1
-      multiline_verse = <<-VERSE
+      one_verse = <<-VERSE
 #{num_bottles} bottle of beer on the wall, #{num_bottles} bottle of beer.
 Take it down and pass it around, no more bottles of beer on the wall.
 VERSE
     elsif num_bottles == 2
-      multiline_verse = <<-VERSE
+      one_verse = <<-VERSE
 #{num_bottles} bottles of beer on the wall, #{num_bottles} bottles of beer.
 Take one down and pass it around, #{num_bottles - 1} bottle of beer on the wall.
 VERSE
     else
-      multiline_verse = <<-VERSE
+      one_verse = <<-VERSE
 #{num_bottles} bottles of beer on the wall, #{num_bottles} bottles of beer.
 Take one down and pass it around, #{num_bottles - 1} bottles of beer on the wall.
 VERSE
     end
-    puts multiline_verse
-    return multiline_verse
+    return one_verse
   end
+
+
+  def verses(start_num_bottles, end_num_bottles)
+    all_verses = ""
+    puts "all_verses: #{all_verses}"
+    while start_num_bottles >= end_num_bottles do
+      puts "start_num_bottles: #{start_num_bottles}"
+      puts "end_num_bottles: #{end_num_bottles}"
+      all_verses << verse(start_num_bottles)
+      puts "all_verses: #{all_verses}"
+      start_num_bottles = start_num_bottles - 1
+    end
+    puts "FINAL all_verses: #{all_verses}"
+    return all_verses
+  end
+  binding.pry
 end
