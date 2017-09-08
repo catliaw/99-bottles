@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 
 # define class Bottles
 class Bottles
@@ -30,16 +30,14 @@ VERSE
 
   def verses(start_num_bottles, end_num_bottles)
     all_verses = ""
-    puts "all_verses: #{all_verses}"
     while start_num_bottles >= end_num_bottles do
-      puts "start_num_bottles: #{start_num_bottles}"
-      puts "end_num_bottles: #{end_num_bottles}"
       all_verses << verse(start_num_bottles)
-      puts "all_verses: #{all_verses}"
+      if start_num_bottles != end_num_bottles
+        all_verses << "\n"
+      end
       start_num_bottles = start_num_bottles - 1
     end
-    puts "FINAL all_verses: #{all_verses}"
     return all_verses
   end
-  binding.pry
+  # binding.pry
 end
