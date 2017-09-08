@@ -6,7 +6,12 @@ class Bottles
   # end
 
   def verse(num_bottles)
-    if num_bottles == 2
+    if num_bottles == 1
+      multiline_verse = <<-VERSE
+#{num_bottles} bottle of beer on the wall, #{num_bottles} bottle of beer.
+Take it down and pass it around, no more bottles of beer on the wall.
+VERSE
+    elsif num_bottles == 2
       multiline_verse = <<-VERSE
 #{num_bottles} bottles of beer on the wall, #{num_bottles} bottles of beer.
 Take one down and pass it around, #{num_bottles - 1} bottle of beer on the wall.
